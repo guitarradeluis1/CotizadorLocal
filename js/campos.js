@@ -1,0 +1,33 @@
+//tipo| texto, numero, chekeo
+var campos = [
+    { id: 1, valor: 'pendiente nombre', x: 15, y: 80, min: 0, max: 5, ramin: 0, ramax: 5, aleatorio: false, tipo: 'texto', text: 'Nombre', estilo: '' },
+    { id: 2, valor: 'pendiente', x: 15, y: 140, min: 0, max: 5, ramin: 0, ramax: 5, aleatorio: true, tipo: 'texto', text: 'Rasgos Fisicos', estilo: '' },
+    { id: 3, valor: 0, x: 254, y: 332, min: 0, max: 6, ramin: 0, ramax: 1, aleatorio: true, tipo: 'chekeo', text: 'Danio', estilo: { font: '25px Courier', fill: '#FF2D00' } },
+    { id: 4, valor: 0, x: 254, y: 352, min: 0, max: 6, ramin: 0, ramax: 1, aleatorio: true, tipo: 'chekeo', text: 'Tension', estilo: { font: '25px Courier', fill: '#FF2D00' } },
+    { id: 5, valor: 0, x: 320, y: 62, min: 0, max: 6, ramin: 0, ramax: 1, aleatorio: true, tipo: 'chekeo', text: 'Danio Cabeza', estilo: { font: '14px', fill: '#FF2D00' } },
+    { id: 6, valor: 0, x: 353, y: 128, min: 0, max: 6, ramin: 0, ramax: 1, aleatorio: true, tipo: 'chekeo', text: 'Danio Pecho', estilo: { font: '14px', fill: '#FF2D00' } },
+    { id: 7, valor: 0, x: 373, y: 168, min: 0, max: 6, ramin: 0, ramax: 1, aleatorio: true, tipo: 'chekeo', text: 'Danio Brazo Izquierdo', estilo: { font: '14px', fill: '#FF2D00' } },
+    { id: 8, valor: 0, x: 180, y: 168, min: 0, max: 6, ramin: 0, ramax: 1, aleatorio: true, tipo: 'chekeo', text: 'Danio Brazo Derecha', estilo: { font: '14px', fill: '#FF2D00' } },
+    { id: 9, valor: 0, x: 309, y: 296, min: 0, max: 6, ramin: 0, ramax: 1, aleatorio: true, tipo: 'chekeo', text: 'Danio Piernas', estilo: { font: '14px', fill: '#FF2D00' } },
+    
+    { id: 10, valor: 0, x: 120, y: 234, min: -2, max: 2, ramin: 0, ramax: 0, aleatorio: true, tipo: 'numero', text: 'Base danio', estilo: '' },
+    { id: 11, valor: 0, x: 158, y: 261, min: -2, max: 2, ramin: 0, ramax: 0, aleatorio: true, tipo: 'numero', text: 'Pelea Desarmado', estilo: '' },
+    { id: 12, valor: 0, x: 158, y: 280, min: -2, max: 2, ramin: 0, ramax: 0, aleatorio: true, tipo: 'numero', text: 'Pelea Armas', estilo: '' },
+    { id: 13, valor: 0, x: 114, y: 304, min: -2, max: 2, ramin: 0, ramax: 0, aleatorio: true, tipo: 'numero', text: 'Resistencia', estilo: '' },
+    { id: 14, valor: 0, x: 92, y: 350, min: -2, max: 2, ramin: 0, ramax: 0, aleatorio: true, tipo: 'numero', text: 'Consucir', estilo: '' },
+    { id: 15, valor: 0, x: 92, y: 375, min: -2, max: 2, ramin: 0, ramax: 0, aleatorio: true, tipo: 'numero', text: 'Punteria', estilo: '' },
+    { id: 16, valor: 0, x: 92, y: 402, min: -2, max: 2, ramin: 0, ramax: 0, aleatorio: true, tipo: 'numero', text: 'Sigilo', estilo: '' },
+    { id: 17, valor: 0, x: 106, y: 452, min: -2, max: 2, ramin: 0, ramax: 0, aleatorio: true, tipo: 'numero', text: 'Manitas', estilo: '' },
+    { id: 18, valor: 0, x: 106, y: 475, min: -2, max: 2, ramin: 0, ramax: 0, aleatorio: true, tipo: 'numero', text: 'Arramplar', estilo: '' },
+    { id: 19, valor: 0, x: 177, y: 498, min: -2, max: 2, ramin: 0, ramax: 0, aleatorio: true, tipo: 'numero', text: 'Ocultar / Encontrar', estilo: '' },
+    { id: 20, valor: 0, x: 177, y: 524, min: -2, max: 2, ramin: 0, ramax: 0, aleatorio: true, tipo: 'numero', text: 'Primeros Auxilios', estilo: '' },
+    { id: 21, valor: 0, x: 119, y: 573, min: -2, max: 2, ramin: 0, ramax: 0, aleatorio: true, tipo: 'numero', text: 'Intimidar', estilo: '' },
+    { id: 22, valor: 0, x: 119, y: 598, min: -2, max: 2, ramin: 0, ramax: 0, aleatorio: true, tipo: 'numero', text: 'Atencion', estilo: '' },
+    { id: 23, valor: 0, x: 119, y: 624, min: -2, max: 2, ramin: 0, ramax: 0, aleatorio: true, tipo: 'numero', text: 'Convencer', estilo: '' },
+    { id: 24, valor: 0, x: 119, y: 649, min: -2, max: 2, ramin: 0, ramax: 0, aleatorio: true, tipo: 'numero', text: 'Orientacion', estilo: '' },
+
+    { id: 25, valor: 0, x: 110, y: 213, min: 0, max: 0, ramin: 0, ramax: 0, aleatorio: true, tipo: '', text: 'Fisico', estilo: '' },
+    { id: 26, valor: 0, x: 117, y: 329, min: 0, max: 0, ramin: 0, ramax: 0, aleatorio: true, tipo: '', text: 'Agilidad', estilo: '' },
+    { id: 27, valor: 0, x: 167, y: 428, min: 0, max: 0, ramin: 0, ramax: 0, aleatorio: true, tipo: '', text: 'Inteligencia', estilo: '' },
+    { id: 28, valor: 0, x: 126, y: 548, min: 0, max: 0, ramin: 0, ramax: 0, aleatorio: true, tipo: '', text: 'Espiritu', estilo: '' },
+];

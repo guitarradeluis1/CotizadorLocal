@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cotizador Local V1.0</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 15px;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #000000;
+            font-weight: normal;
+            text-decoration: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none;
+        }
+
+        .img_superior {
+            width: 100%;
+            height: 30%;
+        }
+
+        .img_inferior {
+            width: 100%;
+            height: 30%;
+        }
+
+        table {
+            width: 100%;
+            border: 1px solid #000;
+        }
+
+        th,
+        td {
+            width: 25%;
+            text-align: left;
+            vertical-align: top;
+            border: 1px solid #000;
+            border-collapse: collapse;
+            padding: 0.3em;
+            caption-side: bottom;
+        }
+
+        caption {
+            padding: 0.3em;
+            color: #fff;
+            background: #000;
+        }
+
+        th {
+            background: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="obj.imprimirBase()" class="ocultar">Implimir</button>
+    <button onclick="obj.init()" class="ocultar">Calcular</button>
+    <button onclick="obj.mostrar()">Cotizador local V1.0</button>
+    <div class="ocultar">
+        Días vencimiento: <input type="number" value="15" id="dias_vencimiento">
+        IVA: <input type="number" value="0.19" id="iva">
+    </div>
+    <div id="div_opciones" class="ocultar"></div>
+    <table id="tabla-container">
+        <tr>
+            <th colspan="6">
+                <img src="./arriba.png" alt="" class="img_superior">
+            </th>
+        </tr>
+        <tr>
+            <td>Cotización No:</td>
+            <td><input id="cotizacion" type="text" class="input"></td>
+            <td colspan="4"></td>
+        </tr>
+        <tr>
+            <td><b>Fecha:</b></td>
+            <td colspan="2" id="fecha">fecha</td>
+            <td><b>Fecha Vencimiento:</b></td>
+            <td colspan="2" id="fecha_vencimiento">fecha_vencimiento</td>
+        </tr>
+        <tr>
+            <td><b>Nombre:</b></td>
+            <td colspan="2" ><input id="nombre" type="text" class="input"></td>
+            <td><b>Nit:</b></td>
+            <td colspan="2" ><input id="nit" type="text" class="input"></td>
+        </tr>
+        <tr>
+            <td><b>Direción:</b></td>
+            <td colspan="2" ><input id="direcion" type="text" class="input"></td>
+            <td><b>Marca:</b></td>
+            <td colspan="2" ><input id="marca" type="text" class="input"></td>
+        </tr>
+        <tr>
+            <td><b>Ciudad:</b></td>
+            <td colspan="2" ><input id="ciudad" type="text" class="input"></td>
+            <td><b>Serial:</b></td>
+            <td colspan="2" ><input id="serial" type="text" class="input"></td>
+        </tr>
+        <tr>
+            <td><b>Correo:</b></td>
+            <td colspan="2" ><input id="correo" type="email" class="input"></td>
+            <td><b>Horas:</b></td>
+            <td colspan="2" ><input id="horas" type="text" class="input"></td>
+        </tr>
+        <tr>
+            <td><b>Teléfonos:</b></td>
+            <td colspan="2"><input id="telefonos" type="text" class="input"></td>
+            <td></td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <th><b>ITEM</b></th>
+            <th><b>CANTIDAD</b></th>
+            <th><b>REFERENCIA</b></th>
+            <th><b>DESCRIPCION</b></th>
+            <th><b>VALOR UNIT</b></th>
+            <th><b>VALOR TOTAL</b></th>
+        </tr>
+        <tbody id="data_row"></tbody>
+        <tr class="ocultar">
+            <td><input type="text" id="e_item"></td>
+            <td><input type="number" id="e_cantidad"></td>
+            <td><input type="text" id="e_referencia"></td>
+            <td><input type="text" id="e_descripcion"></td>
+            <td><input type="number" id="e_valorunit"></td>
+            <td><input type="number" id="e_valortotal"></td>
+        </tr>
+        <tr class="ocultar">
+            <td><button onclick="obj.guardarItem()">Guardar</button></td>
+            <td><button onclick="obj.limpiar();">Cancelar</button></td>
+            <td colspan="4"></td>
+        </tr>
+        <tr>
+            <td colspan="4" rowspan="3">
+                <b>OBSERVACIONES:</b> Se solicita el 70 % para inicio del servicio y el 30% a la entrega, favor realizar Consignación a la cuenta de ahorros No. 045-000377-21 Bancolombia a nombre de SERVIREPUESTOS JCM.
+            </td>
+            <th>TOTAL</th>
+            <th id="total"></th>
+        </tr>
+        <tr>
+            <th>IVA</th>
+            <th id="total_iva"></th>
+        </tr>
+        <tr>
+            <th>GRAN TOTAL</th>
+            <th id="total_gran"></th>
+        </tr>
+        <tr>
+            <th colspan="6">
+                <img src="./abajo.png" alt="" class="img_inferior">
+            </th>
+        </tr>
+    </table>
+
+    <a id="descargar" style="visibility: hidden;">descarga</a>
+    <script src='./js/guardar.js'></script>
+    <script src='./js/index.js'></script>
+</body>
+
+</html>
